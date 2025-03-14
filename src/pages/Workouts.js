@@ -65,7 +65,7 @@ export default function Workouts() {
     return (
         <Container className='mt-5'>
             <h1 className='text-center'>My Workouts</h1>
-            <AddWorkout fetchWorkouts={fetchWorkouts} />
+            {/*<AddWorkout fetchWorkouts={fetchWorkouts} />*/}
             <Row className='mt-4'>
                 {workouts.map(workout => (
                     <Col md={4} key={workout._id} className='mb-3'>

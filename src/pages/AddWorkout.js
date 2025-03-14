@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-export default function AddWorkout({ fetchWorkouts }) {
+export default function AddWorkout() {
     const [show, setShow] = useState(false);
     const [workout, setWorkout] = useState({ name: '', duration: '' });
+    const navigate = useNavigate(); // ✅ Use navigate for redirection
 
     const handleAddWorkout = () => {
         fetch('https://fitnessapp-api-ln8u.onrender.com/workouts/addWorkout', {
@@ -14,9 +16,9 @@ export default function AddWorkout({ fetchWorkouts }) {
             },
             body: JSON.stringify(workout)
         }).then(() => {
-            fetchWorkouts();
             setShow(false);
             setWorkout({ name: '', duration: '' });
+            navigate('/workouts'); // ✅ Redirect to workouts page
         });
     };
 

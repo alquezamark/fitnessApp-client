@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { Form, Button, Container, } from 'react-bootstrap';
-import { Navigate, Link } from 'react-router-dom'; 
+import { Navigate, Link} from 'react-router-dom'; 
 import Swal from 'sweetalert2';
 
 import UserContext from '../UserContext';
@@ -8,7 +8,6 @@ import UserContext from '../UserContext';
 export default function Login() {
 
 	const { user, setUser } = useContext(UserContext);
-
 	const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -55,7 +54,7 @@ export default function Login() {
 	        	    title: "Login Successful",
 	        	    icon: "success",
 	        	    iconColor: "#FF99CC",
-	        	    text: "Welcome to The Movie Hub!",
+	        	    text: "Welcome to The Zuitt Workout!",
 	        	    showConfirmButton: false,
   					timer: 1500
 	        	});
@@ -93,7 +92,7 @@ export default function Login() {
 
     return (
     	(user.id !== null) ?
-			<Navigate to="/movies" />
+			<Navigate to="/" />
 		:
         	<Container fluid >
 				<div className='row mt-5 pt-5'>
